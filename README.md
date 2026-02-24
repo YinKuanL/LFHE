@@ -77,7 +77,7 @@ By default:
 
 ### Key Parameters
 
-Inside run_experiment():
+Inside `run_experiment()`:
 |	Parameter | Meaning |
 | ------------- | ------------------------------- |
 |   num_clients | Number of decentralised clients |
