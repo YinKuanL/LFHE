@@ -1,0 +1,7 @@
+This is the list of all the experiments:
+1. seed comparison 
+2. alpha experiments (to test the data distribution)
+3. client numbers experiments (to test if the size of the system will affect the results)
+4. topology intervel experiments (to test the convergence rate under different topology update rate)
+5. baseline vs enhancement (comparing lfhe with full connected graph, ring topology, random topology)
+6. datasets experiments (to test the results under different dataset to show the scalability)
