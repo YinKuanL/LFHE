@@ -12,8 +12,12 @@ The repository currently tracks:
 - `results/client_scale_comparison.png`
 - `results/experiments`
 - `figures/cifar10_main_result.png`, copied from `results/CIFAR10_10clients_1000rounds.png` for README display.
+- `figures/lfhe_client_scale_comparison.png`, copied from `results/client_scale_comparison.png` for README display.
+- `figures/lfhe_topology_evolution.png`, copied from `program/Topology Evolution/topology_analysis_alpha0.1.png` for README display.
 
-The README discusses results at the level supported by these artifacts: CIFAR-10 decentralized learning, multi-client experiments, beta/topology behavior, and client-scale comparisons. It does not introduce new numerical claims beyond what is present in tracked files.
+The README includes the manuscript-provided main benchmark table, rounds-to-target table, and matched-protocol mechanism table. These values were provided from the current manuscript source of truth for this staging pass and were copied without rounding or recomputation.
+
+The tracked result artifacts support README figures for CIFAR-10 learning, topology evolution, beta/topology behavior, and client-scale comparison. Generated datasets, new `.npy` files, logs, checkpoints, and bulk result directories remain excluded from Git.
 
 ## Experiment Inventory
 
