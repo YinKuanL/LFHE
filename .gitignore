@@ -1,0 +1,80 @@
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local environments
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+# Editor, OS, and machine-local files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and temporary runtime files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Downloaded datasets and extracted dataset copies
+data/
+**/data/
+datasets/
+**/datasets/
+SpeechCommands/
+**/SpeechCommands/
+cifar-10-batches-py/
+**/cifar-10-batches-py/
+cifar-100-python/
+**/cifar-100-python/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Generated experiment outputs
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+checkpoints/
+**/checkpoints/
+runs/
+**/runs/
+outputs/
+**/outputs/
+wandb/
+**/wandb/
+
+# Generated figures and reports
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Existing tracked result artifacts remain tracked; these rules only affect new files.
