@@ -2,8 +2,6 @@
 
 Local-First Heuristic Evolution (LFHE) adapts peer-to-peer learning topology using only local neighborhood information under bounded communication.
 
-![LFHE CIFAR-10 convergence](figures/cifar10_main_result.png)
-
 ## Research Question
 
 How can fully decentralized learners adapt communication topology using only local information while maintaining bounded communication under non-IID data?
@@ -13,6 +11,10 @@ How can fully decentralized learners adapt communication topology using only loc
 LFHE treats the communication graph as part of the learning system. Each learner observes its ego graph, discovers friend-of-friend candidates, scores candidate updates with local structural and exploration signals, and then adds, swaps, or rejects edges under degree control.
 
 The implementation preserves decentralized model averaging, Dirichlet non-IID client partitions, bounded-degree topology updates, and static baselines including ring, random, fully connected, FedAvg-reference, and DissDL-style comparison code.
+
+![LFHE topology evolution](figures/lfhe_topology_evolution.png)
+
+Topology diagnostics show algebraic connectivity increasing while clustering decreases during early topology evolution, consistent with broader information propagation. No original method-overview figure is currently tracked in this repository.
 
 ## Main Results
 
@@ -30,32 +32,14 @@ Centralized and dense references are useful upper bounds, but they solve a diffe
 
 These results use five seeds. LFHE gives the strongest final decentralized result on CIFAR-10, CIFAR-100, and Speech Commands. On Sentiment140 it is competitive in final accuracy and reaches the target earlier than the decentralized alternatives.
 
+![LFHE main CIFAR-10 convergence](figures/lfhe_main_convergence.png)
+
 | Dataset           | LFHE rounds-to-target |
 | ----------------- | --------------------: |
 | CIFAR-10 ≥70%     |                   225 |
 | CIFAR-100 ≥35%    |                   125 |
 | Speech ≥70%       |                    60 |
 | Sentiment140 ≥65% |                   170 |
-
-## Representative Figures
-
-### Learning
-
-![LFHE main convergence](figures/cifar10_main_result.png)
-
-LFHE improves convergence and decentralized final accuracy under severe non-IID heterogeneity.
-
-### Topology
-
-![LFHE topology evolution](figures/lfhe_topology_evolution.png)
-
-Topology diagnostics show algebraic connectivity increasing while clustering decreases during early topology evolution, consistent with broader information propagation.
-
-### Client Scale
-
-![LFHE client-scale comparison](figures/lfhe_client_scale_comparison.png)
-
-The client-scale artifact records how bounded topology adaptation behaves as the decentralized system size changes.
 
 ## Controlled Mechanism Evidence
 
@@ -70,6 +54,12 @@ Under matched friends-of-friends candidate generation and rewiring budgets, the 
 | LFHE             |    2.247 |     0.7482 |           0.133 |
 
 This matched-protocol experiment provides evidence that objectives containing the structural term induce substantially stronger connectivity. It should not be read as evidence that the structural term directly optimizes algebraic connectivity.
+
+## Additional Results
+
+![LFHE client-scale comparison](figures/lfhe_client_scale_comparison.png)
+
+The client-scale artifact is retained as additional evidence about bounded topology adaptation as the decentralized system size changes, but scaling is not the main emphasis of this repository presentation.
 
 ## Reproduction
 

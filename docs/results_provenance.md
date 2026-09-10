@@ -11,13 +11,21 @@ The repository currently tracks:
 - `results/beta_comparison.png`
 - `results/client_scale_comparison.png`
 - `results/experiments`
-- `figures/cifar10_main_result.png`, copied from `results/CIFAR10_10clients_1000rounds.png` for README display.
+- `figures/lfhe_main_convergence.png`, copied unchanged from `results/CIFAR10_10clients_1000rounds.png` for README display.
 - `figures/lfhe_client_scale_comparison.png`, copied from `results/client_scale_comparison.png` for README display.
 - `figures/lfhe_topology_evolution.png`, copied from `program/Topology Evolution/topology_analysis_alpha0.1.png` for README display.
 
 The README includes the manuscript-provided main benchmark table, rounds-to-target table, and matched-protocol mechanism table. These values were provided from the current manuscript source of truth for this staging pass and were copied without rounding or recomputation.
 
-The tracked result artifacts support README figures for CIFAR-10 learning, topology evolution, beta/topology behavior, and client-scale comparison. Generated datasets, new `.npy` files, logs, checkpoints, and bulk result directories remain excluded from Git.
+The tracked result artifacts support README figures for CIFAR-10 learning, topology evolution, beta/topology behavior, and client-scale comparison. No original LFHE method-overview or bridge-evidence figure source was found in the local LFHE workspace during this presentation pass, so no replacement figure was invented. Generated datasets, new `.npy` files, logs, checkpoints, and bulk result directories remain excluded from Git.
+
+## Curated README Figure Map
+
+| README figure | Copied unchanged from | Manuscript/result role | Notes |
+| --- | --- | --- | --- |
+| `figures/lfhe_topology_evolution.png` | `program/Topology Evolution/topology_analysis_alpha0.1.png` | topology-evolution diagnostic | Shows connectivity/clustering dynamics from the tracked topology-evolution entry point. |
+| `figures/lfhe_main_convergence.png` | `results/CIFAR10_10clients_1000rounds.png` | main CIFAR-10 convergence evidence | Same source as the previously staged `figures/cifar10_main_result.png`, renamed for a clearer public README role. |
+| `figures/lfhe_client_scale_comparison.png` | `results/client_scale_comparison.png` | additional scaling evidence | Retained outside the main narrative because the workshop repository carries the scaling emphasis. |
 
 ## Experiment Inventory
 
