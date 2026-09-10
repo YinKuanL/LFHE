@@ -77,4 +77,8 @@ wandb/
 *.pdf
 *.svg
 
+# Curated, lightweight figures intentionally used by README/docs
+!figures/
+!figures/**
+
 # Existing tracked result artifacts remain tracked; these rules only affect new files.

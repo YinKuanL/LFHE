@@ -35,6 +35,8 @@ The tracked result files are listed in [docs/results_provenance.md](docs/results
 
 ## Main Result Artifacts
 
+![CIFAR-10 main result](figures/cifar10_main_result.png)
+
 | Artifact | Description |
 | --- | --- |
 | `results/CIFAR10_10clients_1000rounds.png` | Tracked CIFAR-10 10-client result figure. |
@@ -72,7 +74,17 @@ The main tracked experiment entry point is `program/train_dfl_cifar10_seeds.py`.
 
 The script defines the CIFAR-10 model, Dirichlet partitioning, decentralized aggregation, random graph initialization, LFHE topology updates, and multi-seed evaluation loop. In the tracked main block, the seed list is `42, 43, 44, 45, 46`.
 
-Additional local experiment directories may exist in working copies. Some contain useful source code mixed with generated datasets and result files. They should be reviewed and tracked selectively in a separate pass so that reproducibility code is preserved without committing large generated artifacts.
+Additional reported-experiment entry points are tracked for baseline comparison, sensitivity, topology-evolution, CIFAR-100, and Google Speech Commands experiments:
+
+| Experiment | Entry point | Notes |
+| --- | --- | --- |
+| CIFAR-10 baseline comparison | `program/Baseline_comparison/main.py` | Compares LFHE with ring, random, fully connected, FedAvg, static MH, and DissDL-style baselines. |
+| Dirichlet-alpha sensitivity | `program/Alpha_test/main.py` | Runs alpha settings encoded in the script against multiple topology baselines. |
+| Topology-evolution diagnostics | `program/Topology Evolution/train_dfl_cifar10_EvolutionBehaviour.py` | Records topology metrics and graph snapshots for LFHE dynamics. |
+| CIFAR-100 benchmark | `program/Baseline_comparison_Cifar100/main.py` | Extends the baseline comparison protocol to CIFAR-100. |
+| Google Speech Commands benchmark | `program/Baseline_comparison_gsc/main.py` | Uses a 10-keyword Speech Commands setting and requires `torchaudio`. |
+
+The current repository does not provide tracked source for every manuscript experiment. In particular, the Sentiment140 experiment is described in the manuscript but is not currently included as a tracked public entry point in this repository.
 
 See [docs/reproducibility.md](docs/reproducibility.md) for cleanup-safe reproducibility notes.
 
@@ -85,7 +97,20 @@ See [docs/reproducibility.md](docs/reproducibility.md) for cleanup-safe reproduc
 ├── docs/
 │   ├── reproducibility.md
 │   └── results_provenance.md
+├── figures/
+│   └── cifar10_main_result.png
 ├── program/
+│   ├── Alpha_test/
+│   │   └── main.py
+│   ├── Baseline_comparison/
+│   │   └── main.py
+│   ├── Baseline_comparison_Cifar100/
+│   │   └── main.py
+│   ├── Baseline_comparison_gsc/
+│   │   └── main.py
+│   ├── Topology Evolution/
+│   │   └── train_dfl_cifar10_EvolutionBehaviour.py
+│   ├── dissdl.py
 │   ├── lfhe.py
 │   └── train_dfl_cifar10_seeds.py
 └── results/
@@ -106,6 +131,7 @@ Dependencies are specified in `requirements.txt`:
 - Matplotlib
 - NetworkX
 - SciPy
+- torchaudio
 
 The experiment script selects CUDA automatically when available and otherwise runs on CPU.
 

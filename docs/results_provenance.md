@@ -11,6 +11,7 @@ The repository currently tracks:
 - `results/beta_comparison.png`
 - `results/client_scale_comparison.png`
 - `results/experiments`
+- `figures/cifar10_main_result.png`, copied from `results/CIFAR10_10clients_1000rounds.png` for README display.
 
 The README discusses results at the level supported by these artifacts: CIFAR-10 decentralized learning, multi-client experiments, beta/topology behavior, and client-scale comparisons. It does not introduce new numerical claims beyond what is present in tracked files.
 
@@ -24,6 +25,19 @@ The tracked `results/experiments` file lists the intended experiment categories:
 4. Topology-interval experiments for convergence under different update rates
 5. Baseline versus enhancement comparisons against fully connected, ring, and random topologies
 6. Dataset experiments for scalability
+
+## Tracked Reproducibility Source
+
+The repository now tracks source entry points for:
+
+- CIFAR-10 baseline comparison: `program/Baseline_comparison/main.py`
+- Dirichlet-alpha sensitivity: `program/Alpha_test/main.py`
+- topology-evolution diagnostics: `program/Topology Evolution/train_dfl_cifar10_EvolutionBehaviour.py`
+- CIFAR-100 benchmark: `program/Baseline_comparison_Cifar100/main.py`
+- Google Speech Commands benchmark: `program/Baseline_comparison_gsc/main.py`
+- DissDL baseline dependency: `program/dissdl.py`
+
+The current repository does not track a Sentiment140 experiment entry point. Generated `.npy` files, generated plots, checkpoints, logs, and downloaded datasets are intentionally excluded from Git.
 
 ## Provenance Policy
 
