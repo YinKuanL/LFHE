@@ -12,9 +12,9 @@ LFHE treats the communication graph as part of the learning system. Each learner
 
 The implementation preserves decentralized model averaging, Dirichlet non-IID client partitions, bounded-degree topology updates, and static baselines including ring, random, fully connected, FedAvg-reference, and DissDL-style comparison code.
 
-![LFHE topology evolution](figures/lfhe_topology_evolution.png)
+![LFHE method overview](figures/lfhe_method_overview.png)
 
-Topology diagnostics show algebraic connectivity increasing while clustering decreases during early topology evolution, consistent with broader information propagation. No original method-overview figure is currently tracked in this repository.
+The overview figure shows the LFHE local-search loop: clients train and aggregate locally, discover friend-of-friend candidates, evaluate add/swap updates under degree control, and evolve the graph sequentially during training.
 
 ## Main Results
 
@@ -32,7 +32,12 @@ Centralized and dense references are useful upper bounds, but they solve a diffe
 
 These results use five seeds. LFHE gives the strongest final decentralized result on CIFAR-10, CIFAR-100, and Speech Commands. On Sentiment140 it is competitive in final accuracy and reaches the target earlier than the decentralized alternatives.
 
-![LFHE main CIFAR-10 convergence](figures/lfhe_main_convergence.png)
+<p>
+  <img src="figures/lfhe_main_convergence_loss.png" alt="LFHE CIFAR-10 training loss" width="49%">
+  <img src="figures/lfhe_main_convergence_accuracy.png" alt="LFHE CIFAR-10 test accuracy" width="49%">
+</p>
+
+The CIFAR-10 convergence panels are the two original panels referenced by the current manuscript for Figure 2. The historical `results/CIFAR10_10clients_1000rounds.png` artifact is not used as the current main-convergence figure.
 
 | Dataset           | LFHE rounds-to-target |
 | ----------------- | --------------------: |
@@ -54,6 +59,14 @@ Under matched friends-of-friends candidate generation and rewiring budgets, the 
 | LFHE             |    2.247 |     0.7482 |           0.133 |
 
 This matched-protocol experiment provides evidence that objectives containing the structural term induce substantially stronger connectivity. It should not be read as evidence that the structural term directly optimizes algebraic connectivity.
+
+![LFHE matched-budget bridge evidence](figures/lfhe_bridge_evidence.png)
+
+## Topology Diagnostics
+
+![LFHE topology evolution](figures/lfhe_topology_evolution.png)
+
+This diagnostic is retained as supplementary topology-evolution evidence. The current manuscript uses the related topology-evolution figure family for CIFAR-10 with `alpha=0.1`; see the provenance notes for the exact boundary.
 
 ## Additional Results
 

@@ -11,21 +11,29 @@ The repository currently tracks:
 - `results/beta_comparison.png`
 - `results/client_scale_comparison.png`
 - `results/experiments`
-- `figures/lfhe_main_convergence.png`, copied unchanged from `results/CIFAR10_10clients_1000rounds.png` for README display.
+- `figures/lfhe_method_overview.png`, copied unchanged from the LFHE manuscript/source workspace.
+- `figures/lfhe_main_convergence_loss.png`, copied unchanged from the LFHE manuscript/source workspace.
+- `figures/lfhe_main_convergence_accuracy.png`, copied unchanged from the LFHE manuscript/source workspace.
+- `figures/lfhe_bridge_evidence.png`, copied unchanged from the LFHE manuscript/source workspace.
 - `figures/lfhe_client_scale_comparison.png`, copied from `results/client_scale_comparison.png` for README display.
 - `figures/lfhe_topology_evolution.png`, copied from `program/Topology Evolution/topology_analysis_alpha0.1.png` for README display.
 
 The README includes the manuscript-provided main benchmark table, rounds-to-target table, and matched-protocol mechanism table. These values were provided from the current manuscript source of truth for this staging pass and were copied without rounding or recomputation.
 
-The tracked result artifacts support README figures for CIFAR-10 learning, topology evolution, beta/topology behavior, and client-scale comparison. No original LFHE method-overview or bridge-evidence figure source was found in the local LFHE workspace during this presentation pass, so no replacement figure was invented. Generated datasets, new `.npy` files, logs, checkpoints, and bulk result directories remain excluded from Git.
+The tracked result artifacts support README figures for CIFAR-10 learning, topology evolution, beta/topology behavior, and client-scale comparison. Generated datasets, new `.npy` files, logs, checkpoints, and bulk result directories remain excluded from Git.
 
 ## Curated README Figure Map
 
 | README figure | Copied unchanged from | Manuscript/result role | Notes |
 | --- | --- | --- | --- |
-| `figures/lfhe_topology_evolution.png` | `program/Topology Evolution/topology_analysis_alpha0.1.png` | topology-evolution diagnostic | Shows connectivity/clustering dynamics from the tracked topology-evolution entry point. |
-| `figures/lfhe_main_convergence.png` | `results/CIFAR10_10clients_1000rounds.png` | main CIFAR-10 convergence evidence | Same source as the previously staged `figures/cifar10_main_result.png`, renamed for a clearer public README role. |
+| `figures/lfhe_method_overview.png` | local manuscript/source workspace `Program/images/overview.png` | manuscript method overview | Referenced by `LFHE_DynaFront_revised.tex` as `images/overview.png`. The newer reviewer-aligned source references `images/FoF.png`, but that standalone asset was not found locally. |
+| `figures/lfhe_main_convergence_loss.png` | local manuscript/source workspace `Program/loss_plot.png` | manuscript Figure 2, CIFAR-10 training loss panel | Copied unchanged from the local manuscript/source workspace. |
+| `figures/lfhe_main_convergence_accuracy.png` | local manuscript/source workspace `Program/mean_std_acc.png` | manuscript Figure 2, CIFAR-10 test accuracy panel | Copied unchanged from the local manuscript/source workspace. |
+| `figures/lfhe_bridge_evidence.png` | local manuscript/source workspace `Program/Topology_Evolution/bridge_evidence_outputs/bridge_panels_alpha0.1.png` | manuscript Figure 10, matched-budget bridge evidence | Copied unchanged from the local manuscript/source workspace. |
+| `figures/lfhe_topology_evolution.png` | `program/Topology Evolution/topology_analysis_alpha0.1.png` | supplementary topology-evolution diagnostic | Shows connectivity/clustering dynamics from the tracked topology-evolution entry point. The current manuscript references related topology panels as `images/topology_dual_alpha0.1.png` and `images/topology_snapshot.png`, not this exact README asset. |
 | `figures/lfhe_client_scale_comparison.png` | `results/client_scale_comparison.png` | additional scaling evidence | Retained outside the main narrative because the workshop repository carries the scaling emphasis. |
+
+The historical artifact `results/CIFAR10_10clients_1000rounds.png` is retained in the repository as historical material but is not presented as the current manuscript's main convergence figure.
 
 ## Experiment Inventory
 
